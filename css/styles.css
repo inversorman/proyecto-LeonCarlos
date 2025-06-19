@@ -1,0 +1,345 @@
+/* selector padre o principal */
+:root {
+  --color-primario: red;
+  --color-secunadrio: #082BA5;
+  /* -- es la forma de declarar una bvariable que puede tener cualquier nombre por ejemplo color primario */
+  --color-parrafo: #53575A;
+  --color-titulos: #282D31;
+  --color-fondo: #fcfcfc;
+  --color-sombra: #282d31;
+}
+
+/* SELECTOR UNIVERSAL */
+
+* {
+  margin: 0;/* quita los bordes de la ventana */
+  padding: 0;
+  box-sizing: border-box;/* esta propiedad hace que los pading se usen correctamente, los 3 son  regla general */
+}
+
+/* SELECTOR HIJO (BODY) */
+body {
+  background-color: var(--color-fondo);
+}
+
+/* IMPORTAR FUENTES PROPIAS
+@import url(../fonts/fuente.ttf) */
+
+/* SELECTOR DE CLASE  */
+/* BOTON WASAP */
+.boton-wasap {
+  position: fixed;
+  /* fija el elemento a la pantalla */
+  bottom: 0.3em;
+  left: 0.3em;
+  background-color: #4dc247;
+  padding: 0.2em;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 3em;
+  /* los iconos se comportan como texto */
+  z-index: 100;
+}
+
+.boton-wasap:hover {
+  background-color: #128c7e;
+  color: yellow;
+  transition: background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+ /* ARTICLES */
+.titulo2 {
+  color: var(--color-titulos);
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.titulo1 {
+  color: var(--color-primario);/* se usa la palabra clave var para llamar a la variable */
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-top: -.3em;  /*   padding:borde interno    margin: borde externo */
+}
+
+.parrafo {
+  color: var(--color-parrafo);
+  text-align: justify;
+  font-size: 1em;
+  line-height: 1.5em; /* interlineado */
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin-top: 1em;
+}
+
+.enlace {
+  background-color: var(--color-primario);
+  color: #ffffff;
+  padding: 1em;    /* el primer numero afecta top y boton y el segundo numero aplica derecha e izquierda */
+  border-radius: .5em;  /*  redondea las esquinas */
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 3em;  /* el margin no le afecta al anlace porque es un elemento inline */  
+}
+
+.margen {
+  margin-bottom: 3em;
+}
+
+.enlace:hover {
+  color: yellow;
+  background-color: var(--color-secunadrio);
+  transition: background-color .3s ease-in-out;   /* transition tiene 3 argumerntos: 1 el elemento que quiero transicionar. 2 el tiempo que va durar 3. el tipo de transicion */
+}
+
+
+/* INICIO DE MENU */
+header {
+  background-color: yellow;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 0 3px;
+}
+
+.menu {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  /* flex distribuye los elementos */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.icono-menu {
+  display: none;
+}
+
+/* formato de la imagen */
+.img-logo {
+  height: 3.8em;
+  padding: 0.5em;
+}
+
+.enlaces {
+  /* formato de la caja de enlaces */
+  text-align: right;
+}
+
+/* SELECTOR DESENDIENTE */
+.enlaces a {
+  color: var(--color-parrafo);
+  padding: 1em;  /*  se puede usar margin o padding para separar los enlaces */
+  font-size: 1em;
+  text-decoration: none;
+}
+
+/* INICIO DE CARDS */ /*   flexbox se usa para distribuciones por ejemplo menus del header para hacer galerias ocards se usa grid o rejilla de bootstrap */
+  
+.titulo_1 {
+  text-align: center;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 1.5em;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* 250 es el tamaño para 4 columnas */
+}
+
+.card {
+  border-radius: 2em;
+  border: 1px solid var(--color-parrafo);
+  box-shadow: 0px 2px 3px var(--color-sombra);
+}
+
+.card-content {
+  padding: 1em;
+}
+
+.card-content a {
+  text-decoration: none;
+}
+
+.card-img img {
+  /* border-top-left-radius: 2em;
+  border-top-right-radius: 2em; */
+  border-radius: 2em 2em 0 0;
+  /* los estilos de arriba se resumen en este estilo  */
+}
+
+.card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-titulos);
+  margin-bottom: 1em;
+}
+
+.card-info {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: var(--color-primario);
+  /* background-color:var(--color-primario); */
+  padding: 0.5em 0.8em;
+  display: block;
+  /* display: inline;
+  margin-left: 3em; */
+  /*  estas dos opciones hacen que el boton sea mas pequeño y no ocupe toda la seccion */
+  text-align: center;
+  border: 1px solid var(--color-primario);
+  border-radius: 5em;
+}
+
+.card-info:hover {
+  background-color: var(--color-primario);
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+
+}
+
+/* INICIO DE REGISTRO */
+form{
+  border: none;
+  width: 45%;
+  margin: auto;
+  padding: 1em;
+  box-shadow:  0 0 10px var(--color-sombra);
+}
+
+select{
+  border-radius: 1em;  
+  border: 0.5px solid var(--color-parrafo);
+  padding: 1em 1em;
+}
+
+.formulario input{
+  display: block;
+  border-radius: 1em;
+  padding: 1em 1em;
+  border: 0.5px solid var(--color-parrafo);
+}
+
+.form-cuerpo{
+  display: flex;
+  flex-direction: column;
+  padding-top:  1em;
+  padding-bottom: 1em;
+}
+.titulo-registro{
+  text-align: center;
+}
+.titulo-registro h1{
+  text-align: left;
+  font-size: 2em;
+  color: var(--color-primario);
+  font-weight: bold;
+}
+.titulo-registro h2{
+  text-align: left;
+  font-size:1.5em ;
+}
+
+.opciones{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+.boton-registro{
+  background-color:red ;
+  color: #fcfcfc;
+  margin-top: 1em;
+  border-radius: 1em;
+}
+
+.input-rad{
+  display: flex;
+  width: 100%;
+  margin: auto;
+  gap: 1em;
+  padding: 1em;
+}
+.acepto{
+  display: flex;
+  gap: 0.5em;
+}
+
+/* FIN DE CARDS */
+
+/* FIN DE MENU */
+
+/* RESPONSIVE WEB DESIGN (ADAPTABLE)*/
+
+/* en realidad es 1024 pero queremos que afecte hasta 1023 nomas */
+/* max-width es para configurar para movil  cualquier cosa que codees afecta a las pantallas 0 hasta 1023 */
+/* min-width es para configurar para movil  cualquier cosa que codees afecta a las pantallas desde 1023 hacia arriba */
+
+@media screen and (max-width:1023px) {
+
+  /* redefinimos los elementos  */
+  .menu {
+    flex-direction: column;
+
+  }
+
+  .icono-menu {
+
+    display: block;
+    font-size: 2em;
+    color: var(--color-primario);
+  }
+
+  .logo {
+    /*  es la caja que contiene la imagen y el icono de menu */
+    display: flex;
+    /*  se vuleve flexible */
+    flex-direction: row;
+    /* se ponen uno al costado del otro */
+    justify-content: space-between;
+    /* se separan equitativamente */
+    width: 100%;
+    /* los elementos de la clase logo ocupen el 100 % de la caja menu */
+    padding: 0.5em;
+  }
+
+  .enlaces {
+    /*  redefinimos los enlaces */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* USANDO LIBRERIAS PARA CREAR EFECTOS   */
+
+  /*   haedroom y menu-flex necesitan jquery */
+
+  /*   los siguientes efectos hacen que la barra de menu desaparezaca en mediada de celular cuando navegamos hacia abajo */
+
+  .headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+  }
+
+  .headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  .headroom--unpinned {
+    transform: translateY(-100%);
+  }
+
+}
+
+/* ETIQUETAS INLINE
+son etiquetas que se ciolocan una al lado de otra ejemplo:  <a></a>
+
+ETIQUETAS EN BLOQUE 
+son etiquetas que se comportan como una caja que ocupa todo el ancho de la ventana. ejemplo: <h1></h1> */
+
+/* PSEUDOCLASE */
+/* Sirve para cambiar el aspecto del elemento al interactuar con el */
+
+

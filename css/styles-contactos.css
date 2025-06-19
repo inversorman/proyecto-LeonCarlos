@@ -1,0 +1,65 @@
+/* selector padre o principal */
+:root{
+  --color-primario: red;
+  --color-secunadrio: #082BA5;      /* -- es la forma de declarar una bvariable que puede tener cualquier nombre por ejemplo color primario */
+  --color-parrafo: #53575A;
+  --color-titulos: #282D31;
+  --color-fondo: #fcfcfc;
+  --color-sombra:#282d31;
+} 
+
+/* SELECTOR UNIVERSAL */
+
+*{
+  margin: 0;                     /* quita los bordes de la ventana */
+  padding: 0;
+  box-sizing: border-box;              /* esta propiedad hace que los pading se usen correctamente, los 3 son  regla general */
+}
+
+/* SELECTOR HIJO (BODY) */
+
+body{
+  background-color: var(--color-fondo);
+}
+
+/* SELECTOR DE ETIQUETA */
+
+form{
+  background-color: #ffff;
+  padding: 1em;
+  box-shadow: 2px 2px 8px black;
+  max-width: 80%;
+  margin: auto;   /*  hace que el formulario se centre */
+
+}
+
+input{
+  width: 100%; 
+  padding: .5em;
+  border: 1px solid var(--color-primario);
+  margin-bottom: 1em;
+  border-radius: 0.3em;
+  padding: 0.5em;
+}
+
+label{
+  color: var(--color-primario);
+  font-weight: bold;  
+}
+
+textarea{
+  width: 100%;
+  min-height: 150px;
+  max-height: 200px;
+  border: 1px solid var(--color-primario);
+  border-radius: 0.3em;
+  padding: 0.5em;  
+}
+
+.input-btn{
+  color: #ffff;
+  background-color: var(--color-primario);
+  border: none;
+  font-weight: bold;
+  border-radius: 0;
+}
